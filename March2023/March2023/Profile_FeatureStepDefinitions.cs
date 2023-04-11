@@ -14,13 +14,18 @@ namespace March2023
     {
         LoginPage loginobj = new LoginPage();
         Profile profileobj = new Profile();
+        Create_Profile createobj = new Create_Profile();
 
-        [Given(@"I logged into turnup portal successfully")]
-        public void GivenILoggedIntoTurnupPortalSuccessfully()
+
+        [Given(@"I logged into MARS portal successfully")]
+        public void GivenILoggedIntoMARSPortalSuccessfully()
         {
             driver = new ChromeDriver();
             loginobj.loginmethod(driver);
         }
+
+
+      
 
         [When(@"I Navigate to Skill field on profile page")]
         public void WhenINavigateToSkillFieldOnProfilePage()
@@ -96,6 +101,27 @@ namespace March2023
             //Assert.That(var != "Writing", "not delete");
            
         }
+        [When(@"Add all details to profile page")]
+        public void WhenAddAllDetailsToProfilePage()
+        {
+            createobj.loadingprofile(driver);
+            createobj.languagemethod(driver);
+            createobj.Educationmethod(driver);
+            createobj.cerficationmethod(driver);
+        }
+
+        [Then(@"profile is updated successfully")]
+        public void ThenProfileIsUpdatedSuccessfully()
+        {
+            Console.WriteLine("profile created successfully");
+        }
+
+        [AfterScenario]
+        public void Teardown()
+        {
+            driver.Quit();
+        }
+
 
 
 

@@ -12,13 +12,16 @@ namespace March2023.Utilities
 {
     public class Commondriver
     {
-        public IWebDriver driver;
+        public static IWebDriver driver;
         [SetUp]
         public void Loginstep()
         {
             driver = new ChromeDriver();
-            LoginPage loginobj = new LoginPage();
-            loginobj.loginmethod(driver);
+            driver.Manage().Window.Maximize();
+
+            //turnup portal
+            driver.Navigate().GoToUrl("http://localhost:5000/");
+           
 
         }
         [TearDown]

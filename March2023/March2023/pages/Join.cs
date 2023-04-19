@@ -12,7 +12,7 @@ namespace March2023.pages
         public void signup(IWebDriver driver)
         {
             //click on join to signup
-            ////*[@id="home"]/div/div/div[1]/div/button
+          
             IWebElement joinbutton = driver.FindElement(By.XPath("//*[@id=\"home\"]/div/div/div[1]/div/button"));
             joinbutton.Click();
 
@@ -37,12 +37,11 @@ namespace March2023.pages
             confrmpasstxtbox.SendKeys("Zalak9407");
 
             //click on checkbox to accept terms condition
-            ///html/body/div[2]/div/div/form/div[6]/div/div/input
             IWebElement checkbox = driver.FindElement(By.XPath("/html/body/div[2]/div/div/form/div[6]/div/div/input"));
             checkbox.Click();
 
             //click on join to signup
-            //*[@id="submit-btn"]
+           
             Thread.Sleep(1000);
             IWebElement joinbtn = driver.FindElement(By.XPath("//*[@id=\"submit-btn\"]"));
             joinbtn.Click();

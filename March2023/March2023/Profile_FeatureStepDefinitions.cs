@@ -15,13 +15,19 @@ namespace March2023
         LoginPage loginobj = new LoginPage();
         Profile profileobj = new Profile();
         Create_Profile createobj = new Create_Profile();
+        //Profile_FeatureStepDefinitions obj = new Profile_FeatureStepDefinitions();  
+        //public Profile_FeatureStepDefinitions()
+        //{
+        //    obj = new Profile_FeatureStepDefinitions();
+        //}
 
 
         [Given(@"I logged into MARS portal successfully")]
         public void GivenILoggedIntoMARSPortalSuccessfully()
         {
-            driver = new ChromeDriver();
-            loginobj.loginmethod(driver);
+            
+            Loginstep();
+            loginobj.loginmethod();
         }
 
 
@@ -30,20 +36,20 @@ namespace March2023
         [When(@"I Navigate to Skill field on profile page")]
         public void WhenINavigateToSkillFieldOnProfilePage()
         {
-            profileobj.SkillTab(driver);
+            profileobj.SkillTab();
         }
 
         [When(@"I add new skills on pages")]
         public void WhenIAddNewSkillsOnPages()
         {
-            profileobj.Addskill(driver);
+            profileobj.Addskill();
         }
 
         [Then(@"The Skill should be added successfully")]
         public void ThenTheSkillShouldBeAddedSuccessfully()
         {
-            string newskill = profileobj.getskill(driver);
-            string newchooselevel = profileobj.getchooselevel(driver);
+            string newskill = profileobj.getskill();
+            string newchooselevel = profileobj.getchooselevel();
 
             Assert.That(newskill == "learning","Actual skill and expected skill do not match");
             Assert.That(newchooselevel == "Beginner","Actual skill level and expected do not match");
@@ -52,68 +58,65 @@ namespace March2023
         [When(@"I Update '([^']*)','([^']*)' on an existing skill field record")]
         public void WhenIUpdateOnAnExistingSkillFieldRecord(string skill, string level)
         {
-           profileobj.Editskill(driver, skill, level);
+           profileobj.Editskill( skill, level);
         }
-        //[Then(@"The record should have updated '([^']*)',Intermediate'")]
-        //public void ThenTheRecordShouldHaveUpdatedIntermediate(string skill, string level)
-        //{
-        //    string editskill = profileobj.geteditedskill(driver);
-        //    string editlevel = profileobj.geteditedlevel(driver);
-        //    Assert.That(editskill == skill, "Actual skill and expected skill do not match");
-        //    Assert.That(editlevel == level, "Actual skill level and expected skill level do not match");
-        //}
+        
         [Then(@"The record should have updated '([^']*)','([^']*)'")]
         public void ThenTheRecordShouldHaveUpdated(string skill, string level)
         {
 
-            string editskill = profileobj.geteditedskill(driver);
-            string editlevel = profileobj.geteditedlevel(driver);
+            string editskill = profileobj.geteditedskill();
+            string editlevel = profileobj.geteditedlevel();
             Assert.That(editskill == skill, "Actual skill and expected skill do not match");
             Assert.That(editlevel == level, "Actual skill level and expected skill level do not match");
         }
 
 
-        //[When(@"I delete '([^']*)','([^']*)' on an existing skill field record")]
-        //public void WhenIDeleteOnAnExistingSkillFieldRecord(string skill, string level)
-        //{
-        //    profileobj.Deleteskill(driver);
-        //}
-        //[Then(@"The record should have deleted '([^']*)','([^']*)'")]
-        //public void ThenTheRecordShouldHaveDeleted(string skill, string level)
-        //{
-
-
-        //    Assert.That(skill != "Writing", "not delete");
-        //    Assert.That(level != "Expert", "Not del");
-        //}
+ 
 
         [When(@"I delete  on an existing skill field record")]
         public void WhenIDeleteOnAnExistingSkillFieldRecord()
         {
-            profileobj.Deleteskill(driver);
+            profileobj.Deleteskill();
         }
         [Then(@"The record should have deleted")]
         public void ThenTheRecordShouldHaveDeleted()
         {
-            Console.WriteLine("Record deleted successfully");
-            //Thread.Sleep(1000);
-            //string var = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td[1]")).Text;
-            //Assert.That(var != "Writing", "not delete");
-           
+            string deleteskill = profileobj.getdelskill();
+            Assert.That(deleteskill != "Writing","Record not deleted ");
         }
         [When(@"Add all details to profile page")]
         public void WhenAddAllDetailsToProfilePage()
         {
-            createobj.loadingprofile(driver);
-            createobj.languagemethod(driver);
-            createobj.Educationmethod(driver);
-            createobj.cerficationmethod(driver);
+            createobj.loadingprofile();
+            createobj.languagemethod();
+            createobj.Educationmethod();
+            createobj.cerficationmethod();
         }
 
         [Then(@"profile is updated successfully")]
         public void ThenProfileIsUpdatedSuccessfully()
         {
-            Console.WriteLine("profile created successfully");
+            string newsdes = createobj.getdes();
+           string newlang = createobj.getlang();
+            string newcountry = createobj.getcountry();
+            string newuni = createobj.getuni();
+            string newtitle = createobj.gettitle();
+            string newdegree = createobj.getdegree();
+            string newcerty = createobj.getcerty(); 
+            string newfrom = createobj.getfrom();
+            string newyear1 = createobj.getyear();
+
+            Assert.That(newsdes == "I am Tester", "Actual des and expected des do not match");
+            Assert.That(newlang == "English", "Actual lang and expected do not match");
+             Assert.That(newcountry == "New Zealand", "Actual country and expected des do not match");
+             Assert.That(newuni == "India", "Actual uni and expected do not match");
+             Assert.That(newtitle == "B.Tech","Actual title and expected do not match");
+             Assert.That(newdegree == "Computer", "Actual degree and expected do not match");
+            Assert.That(newcerty == "java", "Actual certy and expected do not match");
+            Assert.That(newfrom == "University", "Actual degree and expected do not match");
+            Assert.That(newyear1 == "2017", "Actual year and expected do not match");
+
         }
 
         [AfterScenario]

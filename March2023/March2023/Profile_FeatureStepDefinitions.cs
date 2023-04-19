@@ -15,17 +15,18 @@ namespace March2023
         LoginPage loginobj = new LoginPage();
         Profile profileobj = new Profile();
         Create_Profile createobj = new Create_Profile();
-        //Profile_FeatureStepDefinitions obj = new Profile_FeatureStepDefinitions();  
+        ////Profile_FeatureStepDefinitions obj = new Profile_FeatureStepDefinitions();  
         //public Profile_FeatureStepDefinitions()
         //{
-        //    obj = new Profile_FeatureStepDefinitions();
+        //    IWebDriver driver = new ChromeDriver();
         //}
 
 
         [Given(@"I logged into MARS portal successfully")]
         public void GivenILoggedIntoMARSPortalSuccessfully()
         {
-            
+           
+           
             Loginstep();
             loginobj.loginmethod();
         }

@@ -21,7 +21,7 @@ namespace March2023.pages
         {
             
             //Click on pen
-             Wait.WaitToBeClickable(driver, "XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[2]/div/div/div/div/div/div[3]/div/div[2]/div/span/i");
+             Wait.WaitToBeClickable("XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[2]/div/div/div/div/div/div[3]/div/div[2]/div/span/i");
             driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[2]/div/div/div/div/div/div[3]/div/div[2]/div/span/i"))
            .Click();
 
@@ -30,7 +30,7 @@ namespace March2023.pages
             availselect.SelectByValue("0");                                               
                                                                                            
             //click on hours pensil
-            Wait.WaitToBeClickable(driver, "XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[2]/div/div/div/div/div/div[3]/div/div[3]/div/span/i");
+            Wait.WaitToBeClickable("XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[2]/div/div/div/div/div/div[3]/div/div[3]/div/span/i");
             driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[2]/div/div/div/div/div/div[3]/div/div[3]/div/span/i"))
             .Click();
             Thread.Sleep(3000);
@@ -40,7 +40,7 @@ namespace March2023.pages
             hoursSelect.SelectByValue("2");
 
             //Click on earn pensil
-            Wait.WaitToBeClickable(driver, "XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[2]/div/div/div/div/div/div[3]/div/div[4]/div/span/i");
+            Wait.WaitToBeClickable("XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[2]/div/div/div/div/div/div[3]/div/div[4]/div/span/i");
             driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[2]/div/div/div/div/div/div[3]/div/div[4]/div/span/i"))
             .Click();
 
@@ -49,7 +49,7 @@ namespace March2023.pages
             earnSelect.SelectByValue("1");
 
             //Select des pen                          
-            Wait.WaitToBeClickable(driver, "XPath",2, "(//i[@class='outline write icon'])[1]");
+            Wait.WaitToBeClickable("XPath",2, "(//i[@class='outline write icon'])[1]");
             driver.FindElement(By.XPath("(//i[@class='outline write icon'])[1]"))
             .Click();
 
@@ -83,12 +83,12 @@ namespace March2023.pages
           
 
             ////click on add
-            Wait.WaitToBeClickable(driver, "XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/thead/tr/th[3]/div");
+            Wait.WaitToBeClickable("XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/thead/tr/th[3]/div");
             driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/thead/tr/th[3]/div"))
           .Click();
 
             ////add lang in textbox
-            Wait.WaitToBeClickable(driver, "XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[1]/input");
+            Wait.WaitToBeClickable("XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[1]/input");
            driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[1]/input"))
             .SendKeys("English");
 
@@ -120,28 +120,28 @@ namespace March2023.pages
         {
 
            //click on education
-           Wait.WaitToBeClickable(driver, "XPath", 2,"//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[3]");
+           Wait.WaitToBeClickable("XPath", 2,"//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[3]");
            driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[3]"))
           .Click();
 
             //click on add to add education
-            Wait.WaitToBeClickable(driver, "XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/thead/tr/th[6]/div");
+            Wait.WaitToBeClickable("XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/thead/tr/th[6]/div");
             driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/thead/tr/th[6]/div"))
            .Click();
 
             //Add uni name
-            Wait.WaitToBeClickable(driver, "XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[1]/div[1]/input");
+            Wait.WaitToBeClickable("XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[1]/div[1]/input");
             driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[1]/div[1]/input"))
            .SendKeys("India");
 
             //Country of university
-            Wait.WaitToBeClickable(driver, "XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[1]/div[2]/select");
+            Wait.WaitToBeClickable("XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[1]/div[2]/select");
             SelectElement countrySelect = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[1]/div[2]/select")));
             countrySelect.SelectByValue("New Zealand");
 
 
             //select title 
-            Wait.WaitToBeClickable(driver, "XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[1]/select");
+            Wait.WaitToBeClickable("XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[1]/select");
             SelectElement titleSelect = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[1]/select")));
             titleSelect.SelectByValue("B.Tech");
 
@@ -150,7 +150,7 @@ namespace March2023.pages
             .SendKeys("Computer");                   
 
             ////select year
-            Wait.WaitToBeClickable(driver, "XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[3]/select");
+            Wait.WaitToBeClickable("XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[3]/select");
             SelectElement yearSelect = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[3]/select")));
             yearSelect.SelectByValue("2017");
            
@@ -164,7 +164,7 @@ namespace March2023.pages
             Thread.Sleep(1000);
             driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[3]")).Click();
             IWebElement actualcountry = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table[last()]/tbody/tr/td[1]"));
-            return actualcountry.Text;                              ////*[@id="account-profile-section"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td[1]
+            return actualcountry.Text;                             
         }
         public string getuni()
         {
@@ -195,33 +195,33 @@ namespace March2023.pages
 
             //click on certification
             Thread.Sleep(5000);
-            Wait.WaitToBeClickable(driver, "XPath", 10, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[4]");
+            Wait.WaitToBeClickable("XPath", 10, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[4]");
            driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[4]"))
            .Click();
 
             //click on add new to add cerification
-            Wait.WaitToBeClickable(driver, "XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/table/thead/tr/th[4]/div");
+            Wait.WaitToBeClickable("XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/table/thead/tr/th[4]/div");
             driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/table/thead/tr/th[4]/div"))
             .Click();
 
             //enter award to textbox
-            Wait.WaitToBeClickable(driver, "XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[1]/div/input");
+            Wait.WaitToBeClickable("XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[1]/div/input");
              driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[1]/div/input"))
             .SendKeys("java");
 
 
             //Enter certification from
-            Wait.WaitToBeClickable(driver, "XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[2]/div[1]/input");
+            Wait.WaitToBeClickable("XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[2]/div[1]/input");
             IWebElement certyfromtxt = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[2]/div[1]/input"));
             certyfromtxt.SendKeys("University");
 
             //select year
-            Wait.WaitToBeClickable(driver, "XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[2]/div[2]/select");
+            Wait.WaitToBeClickable("XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[2]/div[2]/select");
             SelectElement oSelect = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[2]/div[2]/select")));
             oSelect.SelectByValue("2017");
 
             //Click on add to add certification
-            Wait.WaitToBeClickable(driver, "XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[3]/input[1]");
+            Wait.WaitToBeClickable("XPath", 2, "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[3]/input[1]");
           driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[3]/input[1]"))
            .Click();
             Thread.Sleep(1000);

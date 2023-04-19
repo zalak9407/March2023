@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 namespace March2023.Utilities
 {
-    public class Wait
+    public class Wait:Commondriver
     {
-        public static void WaitToBeClickable(IWebDriver driver, string LocatorType, int seconds, string LocatorValue)
+        public static void WaitToBeClickable(string LocatorType, int seconds, string LocatorValue)
         {
             var wait = new WebDriverWait(driver, new TimeSpan(0, 0, seconds));
             if (LocatorType == "XPath")

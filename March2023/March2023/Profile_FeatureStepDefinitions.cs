@@ -12,14 +12,17 @@ namespace March2023
     [Binding]
     public class Profile_FeatureStepDefinitions:Commondriver
     {
-        LoginPage loginobj = new LoginPage();
-        Profile profileobj = new Profile();
-        Create_Profile createobj = new Create_Profile();
-        ////Profile_FeatureStepDefinitions obj = new Profile_FeatureStepDefinitions();  
-        //public Profile_FeatureStepDefinitions()
-        //{
-        //    IWebDriver driver = new ChromeDriver();
-        //}
+        LoginPage loginobj;
+        Profile profileobj;
+        Create_Profile createobj;
+        //Profile_FeatureStepDefinitions obj = new Profile_FeatureStepDefinitions();  
+        public Profile_FeatureStepDefinitions()
+        {
+             loginobj = new LoginPage();
+             profileobj = new Profile();
+             createobj = new Create_Profile();
+            //IWebDriver driver = new ChromeDriver();
+        }
 
 
         [Given(@"I logged into MARS portal successfully")]

@@ -11,38 +11,66 @@ namespace March2023.pages
 {
     public class Profile : Commondriver
     {
+     
+     private IWebElement actualskill => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td"));
+     private   IWebElement actualchooselevel => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td[2]"));
+
+      private   IWebElement crossbtn => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td[3]/span[2]/i"));
+
+      private   IWebElement pe => driver.FindElement(By.XPath(" //*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td[1] "));
+
+      private  IWebElement createskill => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td[1]"));
+
+     private   IWebElement createlevel => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td[2]"));
+
+        private IWebElement skillbtn => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[2]"));
+
+        private IWebElement addskillbtn => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/thead/tr/th[3]/div"));
+
+        private IWebElement addskilltxtbox => driver.FindElement(By.XPath("//*[@class=\"five wide field\"]/input"));
+
+        private IWebElement chooseskilldropdown => driver.FindElement(By.XPath("//*[@class=\"five wide field\"]/select"));
+
+       private IWebElement beginneroption =>driver.FindElement(By.XPath("//*[@class=\"five wide field\"]/select/option[2]"));
+
+        private IWebElement addbtn => driver.FindElement(By.XPath("//*[@class=\"buttons-wrapper\"]/input"));
+      private   IWebElement pensilbtn => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td[3]/span[1]/i"));
+       private IWebElement editskilltxt => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td/div/div[1]/input"));
+
+      private  IWebElement editlevel => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td/div/div[2]/select"));
+
+      private  IWebElement updateclick => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td/div/span/input[1]"));
         public void SkillTab()
         {
             //click on Skill
             // Thread.Sleep(2500);
             System.Threading.Thread.Sleep(2500);
-            driver.FindElement(By.XPath("//*[@class=\"ui form\"]/div/a[2]")).Click();
+            skillbtn.Click();
         }
         public void Addskill()
         {
 
             Wait.WaitToBeClickable("xPath", 5, "//*[@data-tab=\"second\"]/div/div[2]/div/table/thead/tr/th[3]/div");
             //click on add skill
-           
-            driver.FindElement(By.XPath("//*[@data-tab=\"second\"]/div/div[2]/div/table/thead/tr/th[3]/div")).Click();
+
+            addskillbtn.Click();
             //seller add skill
-            driver.FindElement(By.XPath("//*[@class=\"five wide field\"]/input"))
-           .SendKeys("learning");
+            addskilltxtbox .SendKeys("learning");
 
             //seller click on choose skill level
             
-            driver.FindElement(By.XPath("//*[@class=\"five wide field\"]/select"))
-            .Click();
+           
+           chooseskilldropdown .Click();
 
             // seller choose skill level
             
-            driver.FindElement(By.XPath("//*[@class=\"five wide field\"]/select/option[2]"))
-            .Click();
+          
+            beginneroption.Click();
 
             //seller click on add button
            
-            driver.FindElement(By.XPath("//*[@class=\"buttons-wrapper\"]/input"))
-              .Click();
+           
+             addbtn .Click();
             
         }
 
@@ -51,7 +79,7 @@ namespace March2023.pages
         public string getskill()
         {
             Thread.Sleep(1000);
-            IWebElement actualskill = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td"));
+          
             return actualskill.Text;
 
 
@@ -60,7 +88,7 @@ namespace March2023.pages
 
         public string getchooselevel()
         {
-            IWebElement actualchooselevel = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td[2]"));
+          
             return actualchooselevel.Text;
 
 
@@ -68,30 +96,30 @@ namespace March2023.pages
         public void Editskill(string skill, string level)
         {
             //click on edit button
-            driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td[3]/span[1]/i"))
-           .Click();
+           
+             pensilbtn.Click();
             //edit skill
-            driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td/div/div[1]/input"))
-           .Clear();
-            driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td/div/div[1]/input"))
-           .SendKeys(skill);
+            
+           editskilltxt.Clear();
+          
+           editskilltxt.SendKeys(skill);
             Thread.Sleep(1000);
 
             // Edit level
-            driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td/div/div[2]/select"))
-           .Click();
-            driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td/div/div[2]/select")).SendKeys(level);
+
+            editlevel.Click();
+           editlevel.SendKeys(level);
             Thread.Sleep(1000);
 
             //click on update
-            driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td/div/span/input[1]"))
-            .Click();
+
+            updateclick.Click();
             Thread.Sleep(1000);
         }
         public string geteditedskill()
         {
             Thread.Sleep(1000);
-            IWebElement createskill = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td[1]"));
+           
             return createskill.Text;
 
         }
@@ -99,7 +127,7 @@ namespace March2023.pages
         public string geteditedlevel()
         {
             Thread.Sleep(1000);
-            IWebElement createlevel = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td[2]"));
+          
             return createlevel.Text;
 
         }
@@ -108,7 +136,6 @@ namespace March2023.pages
         //delete skill
         public void Deleteskill()
         {
-            IWebElement crossbtn = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td[3]/span[2]/i"));
             crossbtn.Click();
             Thread.Sleep(1000);
 
@@ -117,7 +144,7 @@ namespace March2023.pages
         public string getdelskill()
         {
             Thread.Sleep(1000);
-            IWebElement pe = driver.FindElement(By.XPath(" //*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td[1] "));
+         
             return pe.Text;
 
         }

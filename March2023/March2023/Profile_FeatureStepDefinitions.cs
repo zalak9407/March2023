@@ -15,13 +15,13 @@ namespace March2023
         LoginPage loginobj;
         Profile profileobj;
         Create_Profile createobj;
-        //Profile_FeatureStepDefinitions obj = new Profile_FeatureStepDefinitions();  
+      
         public Profile_FeatureStepDefinitions()
         {
              loginobj = new LoginPage();
              profileobj = new Profile();
              createobj = new Create_Profile();
-            //IWebDriver driver = new ChromeDriver();
+            
         }
 
 
@@ -30,7 +30,7 @@ namespace March2023
         {
            
            
-            Loginstep();
+        
             loginobj.loginmethod();
         }
 
@@ -123,13 +123,7 @@ namespace March2023
 
         }
 
-        [AfterScenario]
-        public void Teardown()
-        {
-            driver.Quit();
-        }
-
-
+         
 
 
     }

@@ -44,9 +44,9 @@ namespace March2023.pages
      private IWebElement add4edubtn => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[3]/div/input[1]"));
      private IWebElement con => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[3]"));
 
-     private IWebElement actualcountry = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table[last()]/tbody/tr/td[1]"));
+     private IWebElement actualcountry => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table[last()]/tbody/tr/td[1]"));
      private IWebElement uni => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[3]"));
-     private  IWebElement actualuni = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody[last()]/tr/td[2]"));
+     private  IWebElement actualuni => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody[last()]/tr/td[2]"));
      private IWebElement tit => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[3]"));
      private IWebElement actualtitle => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody[last()]/tr/td[3]"));
      private IWebElement deg => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[3]"));
@@ -84,8 +84,7 @@ namespace March2023.pages
           hrspen.Click();
             Thread.Sleep(3000);
 
-            //Select hours dropdown using Name and select value 2
-           // SelectElement hoursSelect = new SelectElement(driver.FindElement(By.Name("availabiltyHour")));
+          
             hoursSelect.SelectByValue("2");
 
             //Click on earn pensil
@@ -103,7 +102,8 @@ namespace March2023.pages
             despen.Click();
 
             //select desc textbox using name and again select using xpath and clear it and put a value
-            //  driver.FindElement(By.Name("value")).SendKeys("I am Tester"); 
+           
+            des.Click();
             des.Clear();
             DescSelect.SendKeys("I am Tester");
             Thread.Sleep(1000);

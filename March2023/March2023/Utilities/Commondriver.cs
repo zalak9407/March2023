@@ -16,10 +16,12 @@ namespace March2023.Utilities
          public static IWebDriver driver;
 
 
+
         [SetUp]
+       // [BeforeScenario]
         public void Loginstep()
         {
-            driver = new ChromeDriver();
+           driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
 
             //turnup portal
@@ -29,6 +31,7 @@ namespace March2023.Utilities
         }
 
         [TearDown]
+       // [AfterScenario]
         public void closeingsteps()
         {
             driver.Quit();
